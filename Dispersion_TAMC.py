@@ -10,8 +10,6 @@
 #%% Importing module
 
 import pandas as pd
-from pandas import DataFrame
-import random
 import numpy as np
 import math
 
