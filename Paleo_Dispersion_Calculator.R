@@ -15,7 +15,7 @@ library(GGally)
 library(reshape2)
 library(circular)
 
-River.df <- read.csv("River.csv", stringsAsFactors = TRUE)
+River.df <- read.csv("Hanna_Basin.csv", stringsAsFactors = TRUE)
 # Change the name of the csv to the one with data that your are running. 
 
 River.df <- na.omit(River.df)
@@ -26,9 +26,9 @@ for (i in colnames(River.df)){
   data.circular = circular(River.df[i], units = "degrees", template = "geographics", modulo = "2pi")
   # Converts data to circular
 
-  Uniformity <- rao.spacing.test(data.circular,alpha=.10)
-  # Raos spacing test for uniformity. If dataset does not have a uniform direction, the dispersion value calculated will not
-  # represent a river system. 
+  Uniformity <- rao.spacing.test(data.circular,alpha=.05)
+  # Raos spacing test for uniformity. If test of uniformity is Rejected, the dataset most likely is a 
+  # river system
 
   Dispersion <- rho.circular(data.circular)
   # Calculating dispersion
