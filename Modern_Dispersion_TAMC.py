@@ -1,4 +1,4 @@
-# CSV Practice Script 
+# Modern Dispersion Calculator TAMC 
 # Anthony Semeraro
 # 17 Jan 2022
 
@@ -6,6 +6,9 @@
 " Anomaly data collected and processed by Dr. Benjamin Cardenas. Make sure to select the river morphology that you are processing."
 " This script is only to be used for modern river current measurements, as the TA is automatically added which paleocurrent data does"
 " does not need added."
+
+" TA = Transport Anomaly"
+# MC = Monte Carlo
 
 #%% Importing module
 
@@ -19,7 +22,10 @@ import math
 # riverdata = pd.read_csv("Braided_250_Modern_Currents.csv") 
 
 # Meandering Rivers 
-riverdata = pd.read_csv("Meandering_250_Modern_Currents.csv") 
+# riverdata = pd.read_csv("Meandering_250_Modern_Currents.csv") 
+
+# Outside Data
+riverdata = pd.read_csv("WW-EX-1.csv")
 
 # TA data for Braided Rivers -> Data Frame
 # ta = pd.read_csv("Bedform_Northloup_Braided.csv")
@@ -93,6 +99,6 @@ dic = {"Dispersion": dispersion_name, "River": dispersion_file}
 df = pd.DataFrame(dic)
 
 # Creating the final CSV document. Need to change name or else it overrides it each run
-df.to_csv("Meandering_250_Dispersion_TAMC.csv")
+df.to_csv("WW-EX-1_Dispersion_TAMC.csv")
 
 print("Program has succesfully completed")
