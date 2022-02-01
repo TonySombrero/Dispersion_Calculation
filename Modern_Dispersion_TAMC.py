@@ -2,12 +2,12 @@
 # Anthony Semeraro
 # 17 Jan 2022
 
-" This script reads in .csv files with a modern rivers name and n polar current measurements. It also read in a file of Transport"
-" Anomaly data collected and processed by Dr. Benjamin Cardenas. Make sure to select the river morphology that you are processing."
-" This script is only to be used for modern river current measurements, as the TA is automatically added which paleocurrent data does"
-" does not need added."
+# This script reads in .csv files with a modern rivers name and n polar current measurements. It also read in a file of Transport"
+# Anomaly data collected and processed by Dr. Benjamin Cardenas. Make sure to select the river morphology that you are processing."
+# This script is only to be used for modern river current measurements, as the TA is automatically added which paleocurrent data does"
+# does not need added."
 
-" TA = Transport Anomaly"
+# TA = Transport Anomaly"
 # MC = Monte Carlo
 
 #%% Importing module
