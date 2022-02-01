@@ -24,10 +24,10 @@ import math
 # riverdata = pd.read_csv("Braided_250_Modern_Currents.csv") 
 
 # Meandering Rivers 
-riverdata = pd.read_csv("Meandering_250_Modern_Currents.csv") 
+# riverdata = pd.read_csv("Meandering_250_Modern_Currents.csv") 
 
 # Outside Data
-# riverdata = pd.read_csv("Braided_250_Modern_Currents.csv")
+riverdata = pd.read_csv("Amazon_Test.csv")
 
 # TA data for Braided Rivers -> Data Frame
 # ta = pd.read_csv("Bedform_Northloup_Braided.csv")
@@ -133,6 +133,6 @@ for column in columns:
 # df = pd.DataFrame(dic)
 
 # Creating the final CSV document. Need to change name or else it overrides it each run
-Dispersion_DF.to_csv("Meandering_250_Subsample.csv")
+Dispersion_DF.to_csv("Amazon_250_Subsample.csv")
 
 print("Program has succesfully completed")
