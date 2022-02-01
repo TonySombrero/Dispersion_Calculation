@@ -12,16 +12,16 @@ library(tidyr)
 
 # Reading in the two dispersion datasets
 
-Meandering.df <- read.csv("Mod_Meand_250_Dispersion.csv", stringsAsFactors = TRUE)
-Braided.df <- read.csv("Mod_Braid_250_Dispersion.csv", stringsAsFactors = TRUE)
+Meandering.df <- read.csv("Meandering_250_Subsample.csv", stringsAsFactors = TRUE)
+Braided.df <- read.csv("Braided_250_Subsample.csv", stringsAsFactors = TRUE)
 
 # Convert the dataframes into long format for easy plotting. 
 
 Meandering.long <- Meandering.df %>%
-  pivot_longer(Amazon_Trib_1:Uvac, names_to = "River", values_to = "Dispersion")
+  pivot_longer(Amazon:Rio_Madidi, names_to = "River", values_to = "Dispersion")
 
 Braided.long <- Braided.df %>%
-  pivot_longer(Ashburton:WGreenland.2, names_to = "River", values_to = "Dispersion")
+  pivot_longer(Ashburton:Knik, names_to = "River", values_to = "Dispersion")
 
 # Creating Plots
 
