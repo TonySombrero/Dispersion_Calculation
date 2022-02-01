@@ -3,7 +3,7 @@
 # Anthony Semeraro
 # 27 Jan 2022
 
-# Descrition
+# Paleo Dispersion Calculation 
 
 import pandas as pd
 import numpy as np
@@ -66,6 +66,3 @@ df = pd.DataFrame(dic)
 df.to_csv("Cedar_Mtn_Fm_Dispersion.csv")
 
 print("Program has succesfully completed")
-
-
-
