@@ -8,6 +8,10 @@
 
 # ***Only use for paleocurrent measurements*** 
 
+
+# *** DO NOT USE THIS CURRENTLY, IT DOES NOT RELIABLY RETURN THE CORRECT DISPERSION VALUE ***
+
+# *** UNDER REVIEW *** # 
 rm(list = ls())
 
 library(ggplot2)
