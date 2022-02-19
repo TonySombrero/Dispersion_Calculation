@@ -13,7 +13,7 @@ BraidedCoordinates = pd.read_csv("Braided_River_Coordinates.csv")
 MeanderCoordinates = MeanderCoordinates.to_numpy()
 BraidedCoordinates = BraidedCoordinates.to_numpy()
 
-# Creating the plot size Original was 10,5
+# Creating the plot size in inches (Width, Height) Original was 10,5
 fig = plt.figure(figsize=(20, 10))
 ax = fig.add_subplot(1, 1, 1, projection=ccrs.Robinson())
 
@@ -33,7 +33,7 @@ for row in MeanderCoordinates:
     long = row[1]
 
     # Long and Lat are added in that order in decimal degrees
-    ax.plot(long, lat, marker='o', color='red', markersize=8,
+    ax.plot(long, lat, marker='*', color='red', markersize=8,
     alpha=0.7, transform=ccrs.Geodetic())
 
 for row in BraidedCoordinates:
@@ -43,9 +43,11 @@ for row in BraidedCoordinates:
     long = row[1]
 
     # Long and Lat are added in that order in decimal degrees
-    ax.plot(long, lat, marker='o', color='blue', markersize=8,
+    ax.plot(long, lat, marker='D', color='blue', markersize=6,
     alpha=0.7, transform=ccrs.Geodetic())
 
-plt.savefig('rivers.pdf')
+# plt.title("Modern Rivers")
+
+# plt.savefig('rivers.pdf')
 
 plt.show()
