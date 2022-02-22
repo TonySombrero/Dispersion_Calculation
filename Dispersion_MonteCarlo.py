@@ -23,7 +23,7 @@ import math
 # riverdata = pd.read_csv("Meandering_250_Modern_Currents.csv") 
 
 # Outside Data  *** Do not forget to rename the new file at the bottom ***
-riverdata = pd.read_csv("Matukituki_Subsample.csv")
+# riverdata = pd.read_csv("Matukituki_Subsample.csv")
 
 # TA data for Braided Rivers -> Data Frame
 ta = pd.read_csv("Bedform_Northloup_Braided.csv")
@@ -58,8 +58,6 @@ for column in columns:
 
     dispersion_file_normal = []
     # Creating an empty list for dispersion values to be added later
-
-    confidence_file = []
 
     while len_contents >= 5:
         # Subsampling down to 5 measurements
@@ -120,6 +118,6 @@ for column in columns:
     i = i + 1
 
 # Creating the final CSV document. Need to change name or else it overrides it each run
-Dispersion_DF.to_csv("Matukituki_Confidence.csv")
+Dispersion_DF.to_csv("Anastamosing_BraidedTA.csv")
 
 print("Program has succesfully completed")
