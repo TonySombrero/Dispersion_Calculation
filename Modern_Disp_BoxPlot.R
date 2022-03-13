@@ -11,7 +11,15 @@ rm(list = ls())
 library(ggplot2)
 library(reshape2)
 
-Morphology.df <- read.csv("Modern_250_MCTA.csv", stringsAsFactors = TRUE)
+# For only Braided and Meandering Data
+# Morphology.df <- read.csv("Modern_250_MCTA.csv", stringsAsFactors = TRUE)
+
+# For 3 morphologies with Braided TA
+Morphology.df <- read.csv("Modern_250_MCTA_Braid_Anastamosing.csv", stringsAsFactors = TRUE)
+
+# For 3 Morphologies with Meandering TA
+# Morphology.df <- read.csv("Modern_250_MCTA_Meand_Anastamosing.csv", stringsAsFactors = TRUE)
+
 
 str(Morphology.df)
 
@@ -22,8 +30,10 @@ str(Morphology.red.df)
 
 head(Morphology.red.df)
 
+
+# If you want from 0-1, add + ylim(0,1) to the end of the next section
 p1 <- ggplot(Morphology.red.df,aes(Morphology,Dispersion))+geom_boxplot()+ 
   geom_point(aes(color = Morphology, shape = Morphology), size = 2) +
-  labs(x = "Morphology", y = "Dispersion") + ylim(0,1)
+  labs(x = "Morphology", y = "Dispersion")
 
 p1
