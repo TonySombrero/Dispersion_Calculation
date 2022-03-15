@@ -25,16 +25,16 @@ import math
 # riverdata = pd.read_csv("Meandering_250_Modern_Currents.csv") 
 
 # Anastamosing Rivers 
-riverdata = pd.read_csv("Anastamosing_Rivers.csv") 
+riverdata = pd.read_csv("Anast2_Raw_Data.csv") 
 
 # Outside Data
 # riverdata = pd.read_csv("WW-EX-1.csv")
 
 # TA data for Braided Rivers -> Data Frame
-# ta = pd.read_csv("Bedform_Northloup_Braided.csv")
+ta = pd.read_csv("Bedform_Northloup_Braided.csv")
 
 # TA data for Meandering Rivers -> Data Frame
-ta = pd.read_csv("Bedform_Trinity_Meandering.csv")
+# ta = pd.read_csv("Bedform_Trinity_Meandering.csv")
 
 # Columns becomes an index of the column names, each name individually is a string
 columns = riverdata.columns
@@ -96,12 +96,12 @@ for column in columns:
     i = i + 1
 
 # Creating a dictionary of river name and dispersion value 
-dic = {"Dispersion": dispersion_name, "River": dispersion_file}
+dic = {"River": dispersion_name, "Dispersion": dispersion_file}
 
 # Creating a dataframe from the dictionary 
 df = pd.DataFrame(dic)
 
 # Creating the final CSV document. Need to change name or else it overrides it each run
-df.to_csv("Anastamosing_Meandering_TAMC.csv")
+df.to_csv("Anast3_Braid_TAMC.csv")
 
 print("Program has succesfully completed")

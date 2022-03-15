@@ -19,6 +19,8 @@ library(GGally)
 library(reshape2)
 library(circular)
 
+library(diptest)
+
 River.df <- read.csv("Hanna_Basin.csv", stringsAsFactors = TRUE)
 # Change the name of the csv to the one with data that your are running. 
 
@@ -37,9 +39,13 @@ for (i in colnames(River.df)){
   Dispersion <- rho.circular(data.circular)
   # Calculating dispersion
 
-  Direction <- mean.circular(data.circular)
+  # Direction <- mean.circular(data.circular)
   # Calculating mean vector direction
+  
+  Modality <- dip.test(data.circular)
 
+  Disp <- modal.region(data.circular)
+  
   print(i)
   # Displays River Datasets Name
 
@@ -47,9 +53,14 @@ for (i in colnames(River.df)){
 
   print(Dispersion)
 
-  print(Direction)
+  # print(Direction)
+  
+  print(Modality)
+  
+  print(Disp)
+  
 }
 
-
-# rose.diag(River.df[1], bins = 36)
+rose.diag(River.df[1], bins = 36)
 # Plots a rose diagram of the dataset split into 10 degree bins
+
