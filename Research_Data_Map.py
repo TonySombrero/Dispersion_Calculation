@@ -9,9 +9,11 @@ import numpy as np
 # Importing Coordinate Data
 MeanderCoordinates = pd.read_csv("Meandering_River_Coordinates.csv")
 BraidedCoordinates = pd.read_csv("Braided_River_Coordinates.csv")
+AnastomCoordinates = pd.read_csv("Anastomosing_River_Coordinates.csv")
 
 MeanderCoordinates = MeanderCoordinates.to_numpy()
 BraidedCoordinates = BraidedCoordinates.to_numpy()
+AnastomCoordinates = AnastomCoordinates.to_numpy()
 
 # Creating the plot size in inches (Width, Height) Original was 10,5
 fig = plt.figure(figsize=(20, 10))
@@ -33,7 +35,7 @@ for row in MeanderCoordinates:
     long = row[1]
 
     # Long and Lat are added in that order in decimal degrees
-    ax.plot(long, lat, marker='*', color='red', markersize=8,
+    ax.plot(long, lat, marker='s', color='blue', markersize=5,
     alpha=0.7, transform=ccrs.Geodetic())
 
 for row in BraidedCoordinates:
@@ -43,11 +45,21 @@ for row in BraidedCoordinates:
     long = row[1]
 
     # Long and Lat are added in that order in decimal degrees
-    ax.plot(long, lat, marker='D', color='blue', markersize=6,
+    ax.plot(long, lat, marker='o', color='red', markersize=5,
+    alpha=0.7, transform=ccrs.Geodetic())
+
+for row in AnastomCoordinates:
+
+    # Obtaining the Long and Lat from the row 
+    lat = row[0]
+    long = row[1]
+
+    # Long and Lat are added in that order in decimal degrees
+    ax.plot(long, lat, marker='^', color='green', markersize=5,
     alpha=0.7, transform=ccrs.Geodetic())
 
 # plt.title("Modern Rivers")
 
-# plt.savefig('rivers.pdf')
+plt.savefig('ALLrivers.pdf')
 
 plt.show()
