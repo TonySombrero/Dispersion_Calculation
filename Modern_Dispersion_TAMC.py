@@ -19,13 +19,13 @@ import math
 #%% Loading in Data
 
 # Braided Rivers 
-# riverdata = pd.read_csv("Braided_250_Modern_Currents.csv") 
+riverdata = pd.read_csv("6RiversBraid.csv") 
 
 # Meandering Rivers 
 # riverdata = pd.read_csv("Meandering_250_Modern_Currents.csv") 
 
 # Anastamosing Rivers 
-riverdata = pd.read_csv("Anast2_Raw_Data.csv") 
+# riverdata = pd.read_csv("Anast2_Raw_Data.csv") 
 
 # Outside Data
 # riverdata = pd.read_csv("WW-EX-1.csv")
@@ -102,6 +102,6 @@ dic = {"River": dispersion_name, "Dispersion": dispersion_file}
 df = pd.DataFrame(dic)
 
 # Creating the final CSV document. Need to change name or else it overrides it each run
-df.to_csv("Anast3_Braid_TAMC.csv")
+df.to_csv("6Rivers_Braid_TAMC.csv")
 
 print("Program has succesfully completed")
