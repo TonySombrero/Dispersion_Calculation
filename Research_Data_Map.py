@@ -35,7 +35,7 @@ for row in MeanderCoordinates:
     long = row[1]
 
     # Long and Lat are added in that order in decimal degrees
-    ax.plot(long, lat, marker='s', color='blue', markersize=5,
+    ax.plot(long, lat, marker='o', color='green', markersize=5,
     alpha=0.7, transform=ccrs.Geodetic())
 
 for row in BraidedCoordinates:
@@ -45,7 +45,7 @@ for row in BraidedCoordinates:
     long = row[1]
 
     # Long and Lat are added in that order in decimal degrees
-    ax.plot(long, lat, marker='o', color='red', markersize=5,
+    ax.plot(long, lat, marker='s', color='blue', markersize=5,
     alpha=0.7, transform=ccrs.Geodetic())
 
 for row in AnastomCoordinates:
@@ -55,7 +55,7 @@ for row in AnastomCoordinates:
     long = row[1]
 
     # Long and Lat are added in that order in decimal degrees
-    ax.plot(long, lat, marker='^', color='green', markersize=5,
+    ax.plot(long, lat, marker='^', color='black', markersize=5,
     alpha=0.7, transform=ccrs.Geodetic())
 
 # plt.title("Modern Rivers")
