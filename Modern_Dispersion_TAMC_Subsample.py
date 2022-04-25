@@ -27,13 +27,13 @@ import math
 # riverdata = pd.read_csv("Meandering_250_Modern_Currents.csv") 
 
 # Outside Data
-riverdata = pd.read_csv("6RiversMeand.csv")
+riverdata = pd.read_csv("Anastamosing_Rivers.csv")
 
 # TA data for Braided Rivers -> Data Frame
-# ta = pd.read_csv("Bedform_Northloup_Braided.csv")
+ta = pd.read_csv("Bedform_Northloup_Braided.csv")
 
 # TA data for Meandering Rivers -> Data Frame
-ta = pd.read_csv("Bedform_Trinity_Meandering.csv")
+#ta = pd.read_csv("Bedform_Trinity_Meandering.csv")
 
 # Columns becomes an index of the column names, each name individually is a string
 columns = riverdata.columns
@@ -133,6 +133,6 @@ for column in columns:
 # df = pd.DataFrame(dic)
 
 # Creating the final CSV document. Need to change name or else it overrides it each run
-Dispersion_DF.to_csv("6RiversMeand_TAMC3.csv")
+Dispersion_DF.to_csv("Anastomosing_Subsample.csv")
 
 print("Program has succesfully completed")

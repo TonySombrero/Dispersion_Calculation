@@ -17,7 +17,7 @@ import math
 #%% Loading in Data
 
 # Braided Rivers 
-riverdata = pd.read_csv("6RiversBraid.csv") 
+riverdata = pd.read_csv("Anastomosing_High:Low.csv") 
 
 # Meandering Rivers 
 # riverdata = pd.read_csv("Meandering_250_Modern_Currents.csv") 
@@ -118,6 +118,6 @@ for column in columns:
     i = i + 1
 
 # Creating the final CSV document. Need to change name or else it overrides it each run
-Dispersion_DF.to_csv("6RiversBraidedTA.csv")
+Dispersion_DF.to_csv("Anastomosing_Confidence.csv")
 
 print("Program has succesfully completed")
