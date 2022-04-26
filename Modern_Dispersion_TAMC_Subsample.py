@@ -27,7 +27,7 @@ import math
 # riverdata = pd.read_csv("Meandering_250_Modern_Currents.csv") 
 
 # Outside Data
-riverdata = pd.read_csv("Anastamosing_Rivers.csv")
+riverdata = pd.read_csv("Anastomosing_High:Low.csv")
 
 # TA data for Braided Rivers -> Data Frame
 ta = pd.read_csv("Bedform_Northloup_Braided.csv")
