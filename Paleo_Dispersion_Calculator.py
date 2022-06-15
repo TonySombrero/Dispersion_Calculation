@@ -12,7 +12,7 @@ import math
 #%% Loading in Data
 
 # Paleocurrent Data *** RENAME OUTPUT FILE ***
-riverdata = pd.read_csv("Cedar_Mtn_Fm.csv")
+riverdata = pd.read_csv("CMCardenas.csv")
 
 # Columns becomes an index of the column names, each name individually is a string
 columns = riverdata.columns
@@ -63,6 +63,6 @@ dic = {"Dispersion": dispersion_name, "River": dispersion_file}
 df = pd.DataFrame(dic)
 
 # Creating the final CSV document. Need to change name or else it overrides it each run
-df.to_csv("Cedar_Mtn_Fm_Dispersion.csv")
+df.to_csv("CMCardenas_Dispersion.csv")
 
 print("Program has succesfully completed")
