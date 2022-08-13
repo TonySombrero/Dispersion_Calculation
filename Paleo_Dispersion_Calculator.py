@@ -1,9 +1,12 @@
-# Paleo Dispersion Calculator
+# Paleocurrent Dispersion Calculator
 
 # Anthony Semeraro
 # 27 Jan 2022
 
-# Paleo Dispersion Calculation 
+# This script reads in a .csv file of paleocurrent measurements. Measurements begin on line 1 as the header name is read in and used.
+# The dispersion of the paleocurrent dataset is printed at the end of the run.
+
+#! Add Section for modality
 
 import pandas as pd
 import numpy as np
@@ -11,7 +14,7 @@ import math
 
 #%% Loading in Data
 
-# Paleocurrent Data *** RENAME OUTPUT FILE ***
+# Paleocurrent Data #! Ensure you rename the output file
 riverdata = pd.read_csv("Cedar_Mountain_Total.csv")
 
 # Columns becomes an index of the column names, each name individually is a string
@@ -30,16 +33,14 @@ for column in columns:
     # Removing NaN values from list
     river1 = [x for x in riverlist if pd.isnull(x) == False]
 
-    # Math Section
-
-    # Splitting the x and y components using a lambda x function 
+    # Splitting the x and y components using a lambda x function
     cosine_X = lambda x: math.cos(math.radians(x))
     cosine   = np.array([cosine_X(xi) for xi in river1])
 
     sine_Y   = lambda x: math.sin(math.radians(x))
     sine     = np.array([sine_Y(xi) for xi in river1])
 
-    # Getting the average of the x and y components
+    # Averaging of the x and y components
     avg_cosine = np.average(cosine)
     avg_sine   = np.average(sine)
 
@@ -56,13 +57,14 @@ for column in columns:
     # Initiating the loop for the next river in the dataset
     i = i + 1
 
-# Creating a dictionary of river name and dispersion value 
+# Creating a dictionary of river name and dispersion value
 dic = {"Dispersion": dispersion_name, "River": dispersion_file}
 
-# Creating a dataframe from the dictionary 
+# Creating a dataframe from the dictionary
 df = pd.DataFrame(dic)
 
-# Creating the final CSV document. Need to change name or else it overrides it each run
+# Creating the final CSV document
 df.to_csv("Cedar_Mountain_Total_Dispersion.csv")
 
 print("Program has succesfully completed")
+
