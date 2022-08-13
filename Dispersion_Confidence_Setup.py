@@ -3,7 +3,7 @@
 # Anthony Semeraro
 # 3 Feb 2022
 
-# This script reads in modern current direction measurements, adds the transport anomaly, and then returns a .csv file 
+# This script reads in modern current direction measurements, adds the transport anomaly, and then returns a .csv file
 # with each dispersion value calculated for each run of the Monte Carlo simulation, for each subsampled dataset.
 
 #%% Importing module
@@ -14,13 +14,14 @@ import random
 import numpy as np
 import math
 
+
 #%% Loading in Data
 
-# Braided Rivers 
-riverdata = pd.read_csv("Napo.csv") 
+# Braided Rivers
+riverdata = pd.read_csv("Napo.csv")
 
-# Meandering Rivers 
-# riverdata = pd.read_csv("Meandering_250_Modern_Currents.csv") 
+# Meandering Rivers
+# riverdata = pd.read_csv("Meandering_250_Modern_Currents.csv")
 
 # Outside Data  *** Do not forget to rename the new file at the bottom ***
 # riverdata = pd.read_csv("Matukituki_Subsample.csv")
@@ -82,7 +83,7 @@ for column in columns:
 
             # Math Section
 
-            # Splitting the x and y components using a lambda x function 
+            # Splitting the x and y components using a lambda x function
             cosine_X = lambda x: math.cos(math.radians(x))
             cosine   = np.array([cosine_X(xi) for xi in current_anomaly])
 
@@ -113,7 +114,7 @@ for column in columns:
         Dispersion_DF = pd.concat([Dispersion_DF,dispersion_file], axis=1)
 
         len_contents -= 5
-        # Change this to 1 for a smoother curve for Brady. 
+        # Change this to 1 for a smoother curve for Brady.
 
     i = i + 1
 
