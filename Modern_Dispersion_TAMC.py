@@ -1,4 +1,4 @@
-# Modern Dispersion Calculator TAMC 
+# Modern Dispersion Calculator TAMC
 # Anthony Semeraro
 # 17 Jan 2022
 
@@ -18,23 +18,29 @@ import math
 
 #%% Loading in Data
 
-# Braided Rivers 
-riverdata = pd.read_csv("6RiversBraid.csv") 
+# River Data Read In
+riverdata = pd.read_csv("6RiversBraid.csv")
 
-# Meandering Rivers 
-# riverdata = pd.read_csv("Meandering_250_Modern_Currents.csv") 
+# Assigning Transport Anomaly datasets for the modern data morphologies
+Morphology = input("Please enter River Morphology. A for Anastomosing, B for Braided, M for Meandering:")
 
-# Anastamosing Rivers 
-# riverdata = pd.read_csv("Anast2_Raw_Data.csv") 
+if Morphology == 'A':
+    TA = input("Please enter morphology of Transport Anomaly to be used. B for Braided, M for Meandering:")
 
-# Outside Data
-# riverdata = pd.read_csv("WW-EX-1.csv")
+    if TA == "M":
+        ta = pd.read_csv("Bedform_Trinity_Meandering.csv")
 
-# TA data for Braided Rivers -> Data Frame
-ta = pd.read_csv("Bedform_Northloup_Braided.csv")
+    if TA == "B":
+        ta = pd.read_csv("Bedform_Northloup_Braided.csv")
 
-# TA data for Meandering Rivers -> Data Frame
-# ta = pd.read_csv("Bedform_Trinity_Meandering.csv")
+elif Morphology == 'B':
+    ta = pd.read_csv("Bedform_Northloup_Braided.csv")
+
+elif Morphology == 'M':
+    ta = pd.read_csv("Bedform_Trinity_Meandering.csv")
+
+else:
+    print("Invalid input")
 
 # Columns becomes an index of the column names, each name individually is a string
 columns = riverdata.columns
@@ -63,7 +69,7 @@ for column in columns:
 
         # Math Section
 
-        # Splitting the x and y components using a lambda x function 
+        # Splitting the x and y components using a lambda x function
         cosine_X = lambda x: math.cos(math.radians(x))
         cosine   = np.array([cosine_X(xi) for xi in current_anomaly])
 
@@ -95,10 +101,10 @@ for column in columns:
     # Initiating the loop for the next river in the dataset
     i = i + 1
 
-# Creating a dictionary of river name and dispersion value 
+# Creating a dictionary of river name and dispersion value
 dic = {"River": dispersion_name, "Dispersion": dispersion_file}
 
-# Creating a dataframe from the dictionary 
+# Creating a dataframe from the dictionary
 df = pd.DataFrame(dic)
 
 # Creating the final CSV document. Need to change name or else it overrides it each run
