@@ -17,20 +17,29 @@ import math
 
 #%% Loading in Data
 
-# Braided Rivers
+# River Dataset
 riverdata = pd.read_csv("Napo.csv")
 
-# Meandering Rivers
-# riverdata = pd.read_csv("Meandering_250_Modern_Currents.csv")
+# Assigning Transport Anomaly datasets for the modern data morphologies
+Morphology = input("Please enter River Morphology. A for Anastomosing, B for Braided, M for Meandering:")
 
-# Outside Data  *** Do not forget to rename the new file at the bottom ***
-# riverdata = pd.read_csv("Matukituki_Subsample.csv")
+if Morphology == 'A':
+    TA = input("Please enter morphology of Transport Anomaly to be used. B for Braided, M for Meandering:")
 
-# TA data for Braided Rivers -> Data Frame
-ta = pd.read_csv("Bedform_Trinity_Meandering.csv")
+    if TA == "M":
+        ta = pd.read_csv("Bedform_Trinity_Meandering.csv")
 
-# TA data for Meandering Rivers -> Data Frame
-# ta = pd.read_csv("Bedform_Trinity_Meandering.csv")
+    if TA == "B":
+        ta = pd.read_csv("Bedform_Northloup_Braided.csv")
+
+elif Morphology == 'B':
+    ta = pd.read_csv("Bedform_Northloup_Braided.csv")
+
+elif Morphology == 'M':
+    ta = pd.read_csv("Bedform_Trinity_Meandering.csv")
+
+else:
+    print("Invalid input")
 
 # Columns becomes an index of the column names, each name individually is a string
 columns = riverdata.columns
