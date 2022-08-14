@@ -3,8 +3,10 @@
 # Anthony Semeraro
 # 27 Jan 2022
 
-# This script reads in a .csv file of paleocurrent measurements. Measurements begin on line 1 as the header name is read in and used.
-# The dispersion of the paleocurrent dataset is printed at the end of the run.
+# This script reads in a .csv file of paleocurrent measurements. Line 1 is name of the dataset, paleocurrent
+# measurements begin on line 2. This script returns the dispersion value along with a .csv file with the
+# dataset name and the dispersion value. The input file can contain as many paleocurrent datasets as a .csv
+# will allow as long as they are in the correct format listed above.
 
 #! Add Section for modality
 
@@ -15,7 +17,7 @@ import math
 #%% Loading in Data
 
 # Paleocurrent Data #! Ensure you rename the output file
-riverdata = pd.read_csv("Cedar_Mountain_Total.csv")
+riverdata = pd.read_csv("WW-EX2.csv")
 
 # Columns becomes an index of the column names, each name individually is a string
 columns = riverdata.columns
@@ -28,6 +30,7 @@ i = 0
 
 for column in columns:
 
+    # Writing data to list format
     riverlist = riverdata[columns[i]].tolist()
 
     # Removing NaN values from list
@@ -51,10 +54,13 @@ for column in columns:
     dispersion_name.append(column)
     dispersion_file.append(disp_value)
 
+    # Returns Dataset Name
     print(column)
+
+    # Returns Dispersion Value for Dataset
     print(disp_value)
 
-    # Initiating the loop for the next river in the dataset
+    # Initiating the loop for the next river in the dataset if dataset has another column
     i = i + 1
 
 # Creating a dictionary of river name and dispersion value
@@ -64,7 +70,6 @@ dic = {"Dispersion": dispersion_name, "River": dispersion_file}
 df = pd.DataFrame(dic)
 
 # Creating the final CSV document
-df.to_csv("Cedar_Mountain_Total_Dispersion.csv")
+df.to_csv("WW-EX2.csv")
 
 print("Program has succesfully completed")
-
