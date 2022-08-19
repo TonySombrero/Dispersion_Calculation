@@ -19,7 +19,7 @@ import math
 #%% Loading in Data
 
 # River Data Read In
-riverdata = pd.read_csv("6RiversBraid.csv")
+riverdata = pd.read_csv("WW-EX-2_Remote.csv")
 
 # Assigning Transport Anomaly datasets for the modern data morphologies
 Morphology = input("Please enter River Morphology. A for Anastomosing, B for Braided, M for Meandering:")
@@ -59,7 +59,7 @@ for column in columns:
     River1 = riverdata[columns[i]].tolist()
 
     # Initiating Monte Carlo Loop
-    Monte_Carlo = 500
+    Monte_Carlo = 10000
     disp = []
     while Monte_Carlo >= 1:
 
@@ -104,10 +104,12 @@ for column in columns:
 # Creating a dictionary of river name and dispersion value
 dic = {"River": dispersion_name, "Dispersion": dispersion_file}
 
+print(dispersion_file)
+
 # Creating a dataframe from the dictionary
 df = pd.DataFrame(dic)
 
 # Creating the final CSV document. Need to change name or else it overrides it each run
-df.to_csv("6Rivers_Braid_TAMC.csv")
+df.to_csv("WW-EX-2_Remote_TA_Dispersion.csv")
 
 print("Program has succesfully completed")
