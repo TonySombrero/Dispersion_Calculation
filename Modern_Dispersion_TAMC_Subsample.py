@@ -21,7 +21,7 @@ import math
 #%% Loading in Data
 
 # Modern River Dataset
-riverdata = pd.read_csv("Braided_250_Modern_Currents.csv")
+riverdata = pd.read_csv("Amazon_250_M_Test.csv")
 
 # Assigning Transport Anomaly datasets for the modern data morphologies
 Morphology = input("Please enter River Morphology. A for Anastomosing, B for Braided, M for Meandering:")
@@ -142,6 +142,6 @@ for column in columns:
 # df = pd.DataFrame(dic)
 
 # Creating the final CSV document. Need to change name or else it overrides it each run
-Dispersion_DF.to_csv("Napo_Subsample.csv")
+Dispersion_DF.to_csv("Amazon_250_M_Test_Subsample.csv")
 
 print("Program has succesfully completed")

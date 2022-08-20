@@ -19,7 +19,7 @@ import math
 #%% Loading in Data
 
 # River Data Read In
-riverdata = pd.read_csv("WW-EX-2_Remote.csv")
+riverdata = pd.read_csv("Amazon_250_M_Test.csv")
 
 # Assigning Transport Anomaly datasets for the modern data morphologies
 Morphology = input("Please enter River Morphology. A for Anastomosing, B for Braided, M for Meandering:")
@@ -110,6 +110,6 @@ print(dispersion_file)
 df = pd.DataFrame(dic)
 
 # Creating the final CSV document. Need to change name or else it overrides it each run
-df.to_csv("WW-EX-2_Remote_TA_Dispersion.csv")
+df.to_csv("Amazon_250_M_Test_TA_Dispersion.csv")
 
 print("Program has succesfully completed")
