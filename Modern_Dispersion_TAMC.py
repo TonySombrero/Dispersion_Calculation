@@ -7,6 +7,9 @@
 # This script is only to be used for modern river current measurements, as the TA is automatically added which paleocurrent data does"
 # does not need added."
 
+#! Does not work on multiple columns in a single sheet. Returns NAN values for disperison for all except longest.
+#* TODO: Fix Bug
+
 # TA = Transport Anomaly"
 # MC = Monte Carlo
 
@@ -19,7 +22,7 @@ import math
 #%% Loading in Data
 
 # River Data Read In
-riverdata = pd.read_csv("Amazon_250_M_Test.csv")
+riverdata = pd.read_csv("Scotts-Sinuous-R.csv")
 
 # Assigning Transport Anomaly datasets for the modern data morphologies
 Morphology = input("Please enter River Morphology. A for Anastomosing, B for Braided, M for Meandering:")
@@ -110,6 +113,6 @@ print(dispersion_file)
 df = pd.DataFrame(dic)
 
 # Creating the final CSV document. Need to change name or else it overrides it each run
-df.to_csv("Amazon_250_M_Test_TA_Dispersion.csv")
+df.to_csv("Scotts-Sinuous-R_TA_Dispersion.csv")
 
 print("Program has succesfully completed")
