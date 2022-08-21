@@ -22,7 +22,7 @@ import math
 #%% Loading in Data
 
 # River Data Read In
-riverdata = pd.read_csv("Scotts-Sinuous-R.csv")
+riverdata = pd.read_csv("15-Mile-EX-1_R.csv")
 
 # Assigning Transport Anomaly datasets for the modern data morphologies
 Morphology = input("Please enter River Morphology. A for Anastomosing, B for Braided, M for Meandering:")
@@ -113,6 +113,6 @@ print(dispersion_file)
 df = pd.DataFrame(dic)
 
 # Creating the final CSV document. Need to change name or else it overrides it each run
-df.to_csv("Scotts-Sinuous-R_TA_Dispersion.csv")
+df.to_csv("15-Mile-EX-1_R_TA_Dispersion.csv")
 
 print("Program has succesfully completed")
