@@ -17,7 +17,7 @@ import math
 #%% Loading in Data
 
 # Paleocurrent Data #! Ensure you rename the output file
-riverdata = pd.read_csv(".csv")
+riverdata = pd.read_csv("Cedar_Mountain.csv")
 
 # Columns becomes an index of the column names, each name individually is a string
 columns = riverdata.columns
@@ -70,7 +70,7 @@ dic = {"Dispersion": dispersion_name, "River": dispersion_file}
 df = pd.DataFrame(dic)
 
 # Creating the final CSV document
-df.to_csv("_Dispersion.csv")
+df.to_csv("Cedar_Mountain_Dispersion.csv")
 
 print("Program has succesfully completed")
 # %%
